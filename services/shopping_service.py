@@ -9,8 +9,7 @@ class ShoppingService:
         
     def add_items(self, product: Product):
         if product.quantity_in_stock <= 0:
-            product.quantity_in_stock = 0
-            print('nadarim')
+            raise ValueError('out of stock')
         else:            
             product.quantity_in_stock -= 1
         # self.items[product.name] = [product.price]

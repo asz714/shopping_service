@@ -7,14 +7,17 @@ product = Product(product_id=101,name='Mobile', price=2.50, quantity_in_stock=2)
 
 shopping_service = ShoppingService(user)
 
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
-
-print(product)
+try:
+    shopping_service.add_items(product=product)
+    shopping_service.add_items(product=product)
+    shopping_service.add_items(product=product)
+    shopping_service.add_items(product=product)
+    shopping_service.add_items(product=product)
+    shopping_service.add_items(product=product)
+    shopping_service.add_items(product=product)
+    shopping_service.add_items(product=product)
+    shopping_service.add_items(product=product)
+except ValueError as ve:
+    print(ve)
+finally:
+    print(product)
