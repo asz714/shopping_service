@@ -9,13 +9,9 @@ shopping_service = ShoppingService(user)
 
 try:
     shopping_service.add_items(product=product)
-    shopping_service.remove_item(product=product)
-    shopping_service.remove_item(product=product)
-    shopping_service.add_items(product=product)
     shopping_service.add_items(product=product)
     shopping_service.remove_item(product=product)
-    # shopping_service.remove_item(product=product)
-
+    shopping_service.remove_item(product=product)
 except ValueError as ve:
     print(ve)
     

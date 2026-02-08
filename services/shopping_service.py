@@ -22,6 +22,8 @@ class ShoppingService:
     def remove_item(self, product: Product)->bool:
         if self.quantity > 0:
             self.quantity -= 1
+            if self.quantity == 0:
+                self.items = {}
             product.quantity_in_stock += 1
     
         return True
