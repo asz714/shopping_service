@@ -1,8 +1,8 @@
-from .user import User
-from .product import Product
+from ..domains.user import User
+from ..domains.product import Product
 from typing import Dict, List
 
-class Shopping_Card:
+class ShoppingService:
     def __init__(self, card_id: int, user: User) -> None:
         self.card_id = card_id
         self.user = user
