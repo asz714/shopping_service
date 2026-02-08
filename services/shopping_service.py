@@ -1,15 +1,18 @@
-from ..domains.user import User
-from ..domains.product import Product
+from domains.user import User
+from domains.product import Product
 from typing import Dict, List
 
 class ShoppingService:
-    def __init__(self, card_id: int, user: User) -> None:
-        self.card_id = card_id
+    def __init__(self, user: User) -> None:
         self.user = user
         self.items = {}
         
-    def add_items(self, product: Product, quantity: int)->Dict[List[str, float]]:
-        self.items[product.name] = [quantity, product.price]
+    def add_items(self, product: Product):
+        if product.quantity_in_stock == 0:
+            print('nadarim')
+            
+        product.quantity_in_stock -= 1
+        # self.items[product.name] = [product.price]
     
     def get_items(self)->dict:
         return self.items
