@@ -8,7 +8,7 @@ class ShoppingService:
         self.items = {}
         self.quantity: int = 0
         
-    def add_items(self, product: Product):
+    def add_items(self, product: Product)->bool:
         if product.quantity_in_stock <= 0:
             raise ValueError('out of stock')
         
@@ -16,15 +16,21 @@ class ShoppingService:
         self.quantity += 1
         
         self.items[product.name] = product.price
+        
+        return True
     
-    def get_items(self)->dict:
-        return self.items
+    def remove_item(self, product: Product)->bool:
+        if self.quantity > 0:
+            self.quantity -= 1
+            product.quantity_in_stock += 1
+    
+        return True
     
     @property
     def total(self)->float:
         total = 0
-        for _, sub_total in self.items.items():
-            total += sub_total[0] * sub_total[1]
+        for _, price in self.items.items():
+            total += price * self.quantity
             
         return total
     
