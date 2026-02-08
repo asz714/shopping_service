@@ -8,10 +8,11 @@ class ShoppingService:
         self.items = {}
         
     def add_items(self, product: Product):
-        if product.quantity_in_stock == 0:
+        if product.quantity_in_stock <= 0:
+            product.quantity_in_stock = 0
             print('nadarim')
-            
-        product.quantity_in_stock -= 1
+        else:            
+            product.quantity_in_stock -= 1
         # self.items[product.name] = [product.price]
     
     def get_items(self)->dict:

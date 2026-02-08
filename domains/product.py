@@ -6,3 +6,6 @@ class Product:
     name: str
     price: float
     quantity_in_stock: int
+    
+    def __str__(self):
+        return str(self.quantity_in_stock)

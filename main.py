@@ -10,5 +10,11 @@ shopping_service = ShoppingService(user)
 shopping_service.add_items(product=product)
 shopping_service.add_items(product=product)
 shopping_service.add_items(product=product)
+shopping_service.add_items(product=product)
+shopping_service.add_items(product=product)
+shopping_service.add_items(product=product)
+shopping_service.add_items(product=product)
+shopping_service.add_items(product=product)
+shopping_service.add_items(product=product)
 
-
+print(product)
