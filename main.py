@@ -1,5 +1,6 @@
 from domains import User, Product
 from services import ShoppingService
+from utilities.logger import logger
 
 user = User(120, 'customer01')
 
@@ -10,10 +11,11 @@ shopping_service = ShoppingService(user)
 try:
     shopping_service.add_items(product=product)
     shopping_service.add_items(product=product)
-    shopping_service.remove_item(product=product)
-    shopping_service.remove_item(product=product)
+    shopping_service.add_items(product=product)
+    shopping_service.add_items(product=product)
+   
 except ValueError as ve:
-    print(ve)
+    logger.critical(ve)
     
 finally:
     print(product, shopping_service,' total:', shopping_service.total)
