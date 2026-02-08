@@ -8,4 +8,4 @@ class Product:
     quantity_in_stock: int
     
     def __str__(self):
-        return str(self.quantity_in_stock)
+        return f'quantity in stock: {self.quantity_in_stock}\n'

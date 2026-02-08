@@ -20,4 +20,4 @@ try:
 except ValueError as ve:
     print(ve)
 finally:
-    print(product)
+    print(product, shopping_service)
