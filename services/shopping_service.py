@@ -23,7 +23,7 @@ class ShoppingService:
         if self.quantity > 0:
             self.quantity -= 1
             if self.quantity == 0:
-                self.items = {}
+                self.items.clear()
             product.quantity_in_stock += 1
     
         return True
