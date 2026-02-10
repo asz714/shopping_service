@@ -9,7 +9,8 @@ class UserService:
         
         return True
     
-    def show_user():...
-        # conn_str = sqlite3.connect()
-        # cursor = conn_str.cursor()
-        # cursor.execute(select * from users).fetchall()
+    @staticmethod
+    def fetch_users():
+        db = DB()
+        return db.fetch(f'SELECT * FROM users')
+        
