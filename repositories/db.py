@@ -11,15 +11,17 @@ class DB:
     
         return True
     
-    def fetchone_(self, query: str)->list:
+    def fetch(self, query: str)->list:
         return self.cursor.execute(query).fetchone()
     
-    def fetchall_(self, query: str)->list:
-        return self.cursor.execute(query).fetchall()
+    # def fetchall_(self, query: str)->list:
+    #     return self.cursor.execute(query).fetchall()
     
-    # def delete(self,query:str)->bool:
-    #     self.cursor.execute(f'DELETE FROM product WHERE name = {product.name}')
-    #     self.conn_str.commit()
+    def delete(self,query:str)->bool:
+        self.cursor.execute(query)
+        self.conn_str.commit()
+        
+    # f'DELETE FROM fk_users_products WHERE name = {product.name}'
     
     def update(self,query:str)->bool:
         self.cursor.execute(query)
