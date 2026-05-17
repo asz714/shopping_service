@@ -14,8 +14,6 @@ shopping_service.remove_item(product=product)
 shopping_service.add_items(product=product)
 shopping_service.add_items(product=product)
 shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
 
 print(ShoppingService.fetch_items())
 

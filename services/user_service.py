@@ -12,10 +12,10 @@ class UserService:
     @staticmethod
     def fetch_users():
         db = DB()
-        return db.fetchone_(f'SELECT * FROM users')
+        return db.fetchall_(f'SELECT * FROM users')
         
         
     @staticmethod
     def fetchall_users():
         db = DB()
-        return db.fetchall_(f'SELECT * FROM users')
+        return db.fetch(f'SELECT * FROM users')

@@ -14,8 +14,8 @@ class DB:
     def fetch(self, query: str)->list:
         return self.cursor.execute(query).fetchone()
     
-    # def fetchall_(self, query: str)->list:
-    #     return self.cursor.execute(query).fetchall()
+    def fetchall_(self, query: str)->list:
+        return self.cursor.execute(query).fetchall()
     
     def delete(self,query:str)->bool:
         self.cursor.execute(query)
