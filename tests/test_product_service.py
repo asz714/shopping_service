@@ -28,17 +28,4 @@ def test_product_service():
     assert products[0][1] == " TV 43 intch LG "
     assert products[0][2] == 500
     assert products[0][3] == 6
-
-
-
-
-
-# def test_add_product():
-#     former_product_len = len(ProductService.fetch_product()) 
-    
-#     ProductService.add_product(product)
-    
-#     current_product_len = len(ProductService.fetch_product()) 
-#     print(product[-1])
-#     assert current_product_len == former_product_len + 1
-    
+ 
