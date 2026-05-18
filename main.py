@@ -8,12 +8,12 @@ product=Product( name='mobile', price=2.5, quantity_in_stock = 5)
 UserService.add_user(user)
 ProductService.add_product(product)
 
-shopping_service = ShoppingService(user=user)
-shopping_service.add_items(product=product)
-shopping_service.remove_item(product=product)
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
-shopping_service.add_items(product=product)
+shopping_service = ShoppingService(user=user,dbname="shopping_system.db")
+shopping_service.add_items(product=product,dbname="shopping_system.db")
+shopping_service.remove_item(product=product,dbname="shopping_system.db")
+shopping_service.add_items(product=product,dbname="shopping_system.db")
+shopping_service.add_items(product=product,dbname="shopping_system.db")
+shopping_service.add_items(product=product,dbname="shopping_system.db")
 
 print(ShoppingService.fetch_items())
 

@@ -8,9 +8,9 @@ class ShoppingService:
         self.user = user
         self.quantity: int = 0
         
-    def add_items(self, product: Product)->bool:
+    def add_items(self, product: Product,dbname:str)->bool:
         self.quantity += 1
-        db=DB()
+        db=DB(dbname)
         if self.quantity ==1:
             db.add(f"INSERT INTO fk_users_products (user_id,product_id,quantity) VALUES ('{self.user.user_id}','{product.product_id}','{self.quantity} ')")        
         
@@ -25,8 +25,8 @@ class ShoppingService:
         return True
     
    
-    def fetch_items():
-        db=DB()
+    def fetch_items(dbname:str):
+        db=DB(dbname)
         return db.fetch(f"""
         SELECT                  
         users.uname,
@@ -41,8 +41,8 @@ class ShoppingService:
         JOIN product
         ON product.id = fk_users_products.product_id """)
     
-    def remove_item(self, product: Product)->bool:
-        db=DB()
+    def remove_item(self, product: Product,dbname:str)->bool:
+        db=DB(dbname)
         if self.quantity > 0:
             self.quantity -= 1
             db.update(f"UPDATE fk_users_products SET quantity ='{self.quantity}' WHERE product_id ='{product.product_id}'")
