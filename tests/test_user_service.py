@@ -1,5 +1,3 @@
-import sqlite3
-
 from domains import User
 from services import UserService
 from random import randint
